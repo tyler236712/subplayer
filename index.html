@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <video controls src="/vid.mp4"></video>
+
+
+
+    <script>
+        const vid = document.querySelector("video")
+
+        const dragOver = (e) => {
+            e.preventDefault()
+        }
+
+        const drop = (e) => {
+            e.preventDefault()
+            if (e.dataTransfer.items) {
+            // Use DataTransferItemList interface to access the file(s)
+            [...e.dataTransfer.items].forEach((item, i) => {
+                // If dropped items aren't files, reject them
+                if (item.kind === "file") {
+                const file = item.getAsFile();
+                console.log(`… file[${i}].name = ${file}`);
+                }
+            });
+            } else {
+            // Use DataTransfer interface to access the file(s)
+            [...e.dataTransfer.files].forEach((file, i) => {
+                console.log(`… file[${i}].name = ${file.name}`);
+            });
+            }
+        }
+
+
+        vid.addEventListener("dragover", dragOver)
+        vid.addEventListener("drop", drop)
+    </script>
+</body>
+</html>
