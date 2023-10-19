@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        *, ::before, ::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        html, body {
+            width: 100vw;
+            height: 100vh;
+            background-color: #D0BFFF;
+            scroll-behavior: smooth;
+        }
+
+        .subtitle {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            border-bottom: 2px solid black;
+            align-items: center;
+        }
+
+        .timestamp {
+            opacity: 50%;
+        }
+
+        .sub-text {
+            font-size: 1.2rem;
+        }
+
+        .active {
+            background-color: aliceblue;
+        }
+    </style>
+    <script type="module" src="/index.js" defer></script>
+</head>
+
+<body>
+    <video width="400" controls src="/vid.mp4"></video>
+</body>
+</html>
